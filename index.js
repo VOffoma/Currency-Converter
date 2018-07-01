@@ -19,7 +19,7 @@ const index = {
     registerServiceWorker: async function() {
         try {
             if (!navigator.serviceWorker) return;
-            await navigator.serviceWorker.register('/sw.js');
+            await navigator.serviceWorker.register('/wedeycurrencyconverter.github.io/sw.js');
             console.log('Registration worked!');
         } catch (error) {
             console.log('Registration failed!');
