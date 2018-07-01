@@ -87,7 +87,7 @@ const index = {
             message = 'Please put a valid amount e.g 10, 100.00 etc';
             return message;
         }
-        if(fromCurrency == '0' || !toCurrency == '0'){
+        if(fromCurrency == '0' || toCurrency == '0'){
             message = 'Please select a currency';
             return message;
         }
