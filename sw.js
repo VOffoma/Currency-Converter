@@ -1,13 +1,14 @@
 const cacheName = 'currency-converter';
+const repo = 'wedeycurrencyconverter';
 const filesToCache = [
-    './',
-    '.index.html',
-    './css/bootstrap.min.css',
-    './css/style.css',
-    './index.js',
-    './lib/idb.js',
-    './services/dataService.js',
-    './services/idbService.js'
+    `/${repo}/`,
+    `/${repo}/index.html`,
+    `/${repo}/css/bootstrap.min.css`,
+    `/${repo}/css/style.css`,
+    `/${repo}/index.js`,
+    `/${repo}/lib/idb.js`,
+    `/${repo}/services/dataService.js`,
+    `/${repo}/services/idbService.js`
 ];
 
 // Cache resources
