@@ -44,7 +44,7 @@ idbService.prototype.getRate = function(key){
 };
 
 idbService.prototype.getAllData = function(dbStore) { 
-    return this._dbPromise.then( function(db) {
+    return this.dbPromise.then(function(db) {
         const tx = db.transaction(dbStore);
         const store = tx.objectStore(dbStore);
         return store.getAll();
