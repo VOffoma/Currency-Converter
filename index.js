@@ -48,11 +48,11 @@ const index = {
         const fromCurrency = encodeURIComponent(fromCurrencySelectElm.value);
         const toCurrency = encodeURIComponent(toCurrencySelectElm.value);
         const amount = parseFloat(amountElm.value);
-        const msg = this.areInputsValid(fromCurrency, toCurrency, amount);
-        if (msg !== true){
-            alert(msg);
-        }
-        else{
+        // const msg = this.areInputsValid(fromCurrency, toCurrency, amount);
+        // if (msg !== true){
+        //     alert(msg);
+        // }
+        // else{
             const query = fromCurrency + '_' + toCurrency;
        
             dataService.getConversionRate(query).then(function(rate){
@@ -63,7 +63,7 @@ const index = {
             .catch(async function(){
                index.getOfflineConversionRate(query, amount);
             }); 
-        }
+        //}
           
         
     },
