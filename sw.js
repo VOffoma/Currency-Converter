@@ -6,7 +6,6 @@ const filesToCache = [
     './css/style.css',
     './index.js',
     './lib/idb.js',
-    './bootstrap.min.js',
     './services/dataService.js',
     './services/idbService.js'
 ];
