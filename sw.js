@@ -10,26 +10,47 @@ const filesToCache = [
     './services/idbService.js'
 ];
 
-self.addEventListener('install', function(e){
-    console.log('[ServiceWorker] Install');
+// Cache resources
+self.addEventListener('install', function (e) {
     e.waitUntil(
-      caches.open(cacheName).then(function(cache){
-          console.log('[ServiceWorker] Caching app shell');
-          return cache.addAll(filesToCache);
+      caches.open(cacheName).then(function (cache) {
+        console.log('[ServiceWorker] installing cache');
+        return cache.addAll(filesToCache)
+      }).then(function(){
+        console.log('app shell cached successfully');
       })
-    );
-})
+      .catch(function(err){
+        console.log(err);
+      })
+    )
+});
+
 
 self.addEventListener('activate', event => {
     event.waitUntil(self.clients.claim());
   });
   
-  self.addEventListener('fetch', event => {
-    if (event.request.cache === 'only-if-cached' && event.request.mode !== 'same-origin') return;
-    event.respondWith(
-        caches.match(event.request, {ignoreSearch: true}).then(response => {
-            return response || fetch(event.request);
-        })
-    );
-  });
+
+
+  //Respond with cached resources
+self.addEventListener('fetch', function (e) {
+  console.log('fetch request : ' + e.request.url)
+  e.respondWith(
+    caches.match(e.request).then(function (request) {
+      if (request) { // if cache is available, respond with cache
+        console.log('responding with cache : ' + e.request.url)
+        return request;
+      } else {       // if there are no cache, try fetching request
+        console.log('file is not cached, fetching : ' + e.request.url)
+        return fetch(e.request);
+      }
+
+      // You can omit if/else for console.log & put one line below like this too.
+      // return request || fetch(e.request)
+    })
+  )
+})
+
+
+
 
