@@ -82,7 +82,7 @@ const index = {
     },
     areInputsValid: function(fromCurrency, toCurrency, amount){
         let message = "";
-        if(amount == 0 || isNan(amount) || amount == null || amount == undefined || typeof amount === 'string' || amount instanceof String){
+        if(amount == 0 || isNan(amount) || amount == null || amount == undefined || typeof amount === 'string'){
             message = 'Please put a valid amount e.g 10, 100.00 etc';
             return message;
         }
