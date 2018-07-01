@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>We-Dey</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-white fixed-top bg-white">
+            <a class="navbar-brand" href="#">We-Dey Currency Converter</a>      
+        </nav>
+    </header>
+    <main>
+        <section class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-9">
+                        <div class="card">
+                            <div class="card-header">
+                                    <form class="needs-validation" novalidate>
+                                        <div class="row">
+                                        <div class="col-md-3 mb-3">
+                                                <small>Amount</small>
+                                                <input type="text" class="form-control" id="amount" placeholder="0.00" required>
+                                                <div class="invalid-feedback">
+                                                    Amount required
+                                                </div>
+                                        </div>
+                                        <div class="col-md-3 mb-3">
+                                            <small>From</small>
+                                            <select class="custom-select d-block w-100" id="fromCurrency" required> </select>
+                                            <div class="invalid-feedback">
+                                            Please select a currency.
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-3 mb-3">
+                                            <small>To</small>
+                                            <select class="custom-select d-block w-100" id="toCurrency" required></select>
+                                            <div class="invalid-feedback">
+                                            Please select a currency.
+                                            </div>
+                                        </div>
+                    
+                                        <div class="col-md-3 mb-3">
+                                            <button class="btn btn-primary btn-block" id="getResult" type="submit">Convert</button>
+                                        </div>
+                                        
+                                        </div>
+                        
+                                        <div class="alert alert-secondary" role="alert" id="result-alert">
+                                              <h3 id="result" class="text-center"></h3>
+                                        </div>
+                                        </form>
+                
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">The <span>We-Dey currency converter</span> allows you to check how much you should get when you convert your currency into another. This currency converter allows you to convert your currency while offline based on the history of conversions you have accummulated while online.</p>
+                                <p>This application makes use of <a href="https://www.currencyconverterapi.com">Freecurrencyconverterapi.</a></p>
+                            </div>
+                        </div>
+                                  
+                    </div>
+                </div>
+        </section>
+    </main>
+    
+    <script src="lib/idb.js"></script>
+    <script src="services/idbService.js"></script>
+    <script src="services/dataService.js"></script>
+    <script src="index.js"></script>
+    <!-- <script src="lib/bootstrap.min.js"></script> -->
+</body>
+</html>

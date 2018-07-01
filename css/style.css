@@ -1,0 +1,51 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #6D1330;
+    /* color: #fff; */
+    /* font-family: 'Roboto', sans-serif; */
+    min-height: 75rem;
+    padding-top: 4.5rem;
+}
+
+/* .content {
+    margin: 0 auto;
+}
+.formContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+.box{
+    width: 100%;
+}
+.formContainer label {
+  display: block;
+} */
+.navbar-brand{
+    color: #6D1330;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #6D1330;
+    border-color: #6D1330;
+}
+
+main{
+    margin-top: 5em;
+}
+p{
+    font-size: 14px;
+}
+span{
+    color:#6D1330;
+    text-transform: uppercase;
+    font-weight: bolder
+}
+
+#getResult{
+    margin-top: 22px;
+} 
+
+
