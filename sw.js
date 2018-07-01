@@ -1,5 +1,5 @@
 const cacheName = 'currency-converter';
-const repo = 'wedeycurrencyconverter';
+const repo = 'wedeycurrencyconverter.github.io';
 const filesToCache = [
     `/${repo}/`,
     `/${repo}/index.html`,
